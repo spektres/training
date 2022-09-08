@@ -1,8 +1,8 @@
-﻿Console.Clear();
+Console.Clear();
 Console.WriteLine("Введите номер задания, которое хотите проверить: 41 или 43");
 int task = Convert.ToInt32(Console.ReadLine());
 
-void countingZero(int couting)
+void CountingZero(int couting)
 {
     int count = 0;
     for(int i = 1; i < couting + 1; i++)
@@ -14,9 +14,21 @@ void countingZero(int couting)
     Console.WriteLine($"Введено {count} чисел больше 0");
 }
 
-void searchIntersection(int b1, int k1, int b2, int k2)
+void SearchIntersection(int b1, int k1, int b2, int k2)
 {
-    
+    Console.WriteLine("введите значение b1");
+    double b1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("введите число k1");
+    double k1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("введите значение b2");
+    double b2 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("введите число k2");
+    double k2 = Convert.ToInt32(Console.ReadLine());
+
+    double x = (-b2 + b1)/(-k1 + k2);
+    double y = k2 * x + b2;
+
+    Console.WriteLine($"две прямые пересекутся в точке с координатами X: {x}, Y: {y}");
 }
 
 switch(task)
@@ -25,7 +37,7 @@ switch(task)
     Console.WriteLine("Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.");
     Console.WriteLine("Сколько чисел Вы хотите ввести?");
     int m = Convert.ToInt32(Console.ReadLine());
-    countingZero(m);
+    CountingZero(m);
     break;
 
     case 43:
@@ -38,6 +50,6 @@ switch(task)
     int b2 = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите значение для k2");
     int k2 = Convert.ToInt32(Console.ReadLine());
-    searchIntersection(b1, k1, b2, k2);
+    SearchIntersection(b1, k1, b2, k2);
     break;
 }
